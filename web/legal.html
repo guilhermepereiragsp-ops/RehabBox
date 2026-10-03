@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RehabBox — Informação Legal</title>
+  <meta name="description" content="Política de Privacidade, Termos de Utilização e Declaração de Acessibilidade do RehabBox.">
+  <link rel="icon" type="image/png" href="./assets/images/logo1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* ── LEGAL PAGE SPECIFIC STYLES ── */
+    .legal-hero {
+      background: var(--ink);
+      padding: 7rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .legal-hero::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(119,172,162,0.4), transparent);
+    }
+    .legal-hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 120px;
+      background: linear-gradient(to bottom, transparent, var(--cream));
+      pointer-events: none;
+    }
+    .legal-hero h1 {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 400; line-height: 1.1;
+      color: var(--cream);
+      margin-bottom: 1rem;
+      position: relative; z-index: 2;
+    }
+    .legal-hero h1 em { font-style: italic; color: var(--teal-m); }
+    .legal-hero p {
+      font-size: 1rem; color: var(--ash);
+      max-width: 480px; margin: 0 auto;
+      line-height: 1.7; position: relative; z-index: 2;
+    }
+    .legal-updated {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.75rem; font-weight: 600; color: var(--teal-m);
+      background: rgba(119,172,162,0.12); border: 1px solid rgba(119,172,162,0.25);
+      border-radius: 100px; padding: 4px 12px;
+      margin-bottom: 1.5rem; position: relative; z-index: 2;
+    }
+
+    /* ── TAB NAVIGATION ── */
+    .legal-tabs-wrap {
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 64px; z-index: 90;
+    }
+    .legal-tabs {
+      max-width: 860px; margin: 0 auto;
+      display: flex; gap: 0;
+      padding: 0 2rem;
+    }
+    .legal-tab {
+      display: flex; align-items: center; gap: 8px;
+      padding: 1rem 1.5rem;
+      font-family: inherit; font-size: 0.85rem; font-weight: 600;
+      color: rgba(18,55,70,0.5); background: none; border: none;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s; white-space: nowrap;
+    }
+    .legal-tab svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; flex-shrink: 0; }
+    .legal-tab:hover { color: var(--teal-d); }
+    .legal-tab.active { color: var(--teal-d); border-bottom-color: var(--teal-d); }
+
+    /* ── CONTENT AREA ── */
+    .legal-body {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3rem 2rem 6rem;
+    }
+
+    .legal-panel { display: none; }
+    .legal-panel.active { display: block; }
+
+    /* ── PROSE STYLES ── */
+    .legal-intro {
+      background: rgba(70,129,137,0.06);
+      border: 1px solid rgba(70,129,137,0.18);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+    }
+    .legal-intro p { font-size: 0.95rem; color: var(--ink); line-height: 1.7; }
+    .legal-intro strong { color: var(--teal-d); }
+
+    .legal-section { margin-bottom: 3rem; }
+    .legal-section-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 28px; height: 28px;
+      background: var(--teal-d); color: var(--cream);
+      border-radius: 50%; font-size: 0.72rem; font-weight: 700;
+      flex-shrink: 0; margin-right: 0.75rem;
+    }
+    .legal-section h2 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.5rem; font-weight: 400;
+      color: var(--ink); margin-bottom: 1rem;
+      display: flex; align-items: center;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .legal-section p,
+    .legal-section li {
+      font-size: 0.9rem; color: rgba(18,55,70,0.75);
+      line-height: 1.8; margin-bottom: 0.75rem;
+    }
+    .legal-section ul,
+    .legal-section ol {
+      padding-left: 1.5rem; margin-bottom: 1rem;
+    }
+    .legal-section li { margin-bottom: 0.4rem; }
+    .legal-section a { color: var(--teal-d); text-decoration: underline; }
+    .legal-section a:hover { color: var(--ink); }
+    .legal-section strong { color: var(--ink); font-weight: 600; }
+
+    /* highlight box inside legal */
+    .legal-highlight {
+      background: rgba(18,55,70,0.04);
+      border-left: 3px solid var(--teal-d);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+    }
+    .legal-highlight p { margin-bottom: 0; }
+
+    /* rights table */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin: 1rem 0 1.5rem;
+    }
+    .rights-item {
+      background: rgba(70,129,137,0.05);
+      border: 1px solid rgba(70,129,137,0.15);
+      border-radius: var(--radius);
+      padding: 0.9rem 1rem;
+    }
+    .rights-item strong {
+      display: block; font-size: 0.82rem;
+      color: var(--teal-d); margin-bottom: 0.25rem;
+    }
+    .rights-item p { font-size: 0.78rem; margin-bottom: 0; }
+
+    /* accessibility level badge */
+    .a11y-level {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(34,197,94,0.1);
+      border: 1px solid rgba(34,197,94,0.2);
+      border-radius: 100px; padding: 4px 12px;
+      font-size: 0.75rem; font-weight: 700; color: #15803D;
+      margin-bottom: 1.5rem;
+    }
+    .a11y-level svg { width: 13px; height: 13px; stroke: #15803D; fill: none; stroke-width: 2.5; stroke-linecap: round; }
+
+    /* contact card at bottom */
+    .legal-contact-card {
+      background: var(--ink);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      text-align: center;
+      margin-top: 3rem;
+      position: relative; overflow: hidden;
+    }
+    .legal-contact-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(119,172,162,0.4), transparent);
+    }
+    .legal-contact-card h3 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.4rem; font-weight: 400; color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+    .legal-contact-card p { font-size: 0.85rem; color: var(--ash); margin-bottom: 1.25rem; }
+    .legal-contact-card a {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--teal-d); color: var(--cream);
+      padding: 0.6rem 1.5rem; border-radius: var(--radius);
+      font-size: 0.85rem; font-weight: 600; text-decoration: none;
+      transition: background 0.2s;
+    }
+    .legal-contact-card a:hover { background: var(--teal-m); }
+    .legal-contact-card a svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .legal-tabs { gap: 0; overflow-x: auto; }
+      .legal-tab  { padding: 0.85rem 1rem; font-size: 0.78rem; }
+      .rights-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="cursor-dot"   id="cursorDot"></div>
+<div class="cursor-cross" id="cursorCross"></div>
+
+<!-- ════ NAV ════ -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#F4E9CD" stroke-width="2" stroke-linecap="round">
+        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+        <path d="M2 17l10 5 10-5"/>
+        <path d="M2 12l10 5 10-5"/>
+      </svg>
+    </div>
+    <span class="logo-wordmark">Rehab<span>Box</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#sobre">Sobre</a></li>
+    <li><a href="index.html#jogos">Jogos</a></li>
+    <li><a href="index.html#como-funciona">Como Funciona</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+    <li><a href="index.html#equipa">Equipa</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="index.html#contacto" class="btn-ghost">Contacto</a>
+    <a href="login.php" class="btn-primary">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/>
+      </svg>
+      Iniciar Sessão
+    </a>
+  </div>
+</nav>
+
+<!-- ════ HERO ════ -->
+<div class="legal-hero">
+  <div class="legal-updated">
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+    Atualizado em maio de 2026
+  </div>
+  <h1>Informação <em>Legal</em></h1>
+  <p>Política de Privacidade, Termos de Utilização e Declaração de Acessibilidade do sistema RehabBox.</p>
+</div>
+
+<!-- ════ TABS ════ -->
+<div class="legal-tabs-wrap">
+  <div class="legal-tabs" role="tablist">
+    <button class="legal-tab active" role="tab" data-tab="privacidade" aria-selected="true"
+      onclick="switchTab('privacidade')">
+      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Política de Privacidade
+    </button>
+    <button class="legal-tab" role="tab" data-tab="termos" aria-selected="false"
+      onclick="switchTab('termos')">
+      <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      Termos de Utilização
+    </button>
+    <button class="legal-tab" role="tab" data-tab="acessibilidade" aria-selected="false"
+      onclick="switchTab('acessibilidade')">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      Acessibilidade
+    </button>
+  </div>
+</div>
+
+<!-- ════ LEGAL BODY ════ -->
+<div class="legal-body">
+
+  <!-- ══ PRIVACIDADE ══ -->
+  <div class="legal-panel active" id="panel-privacidade" role="tabpanel">
+
+    <div class="legal-intro">
+      <p>O <strong>RehabBox</strong> está comprometido com a proteção da privacidade e dos dados pessoais dos seus utilizadores, em total conformidade com o <strong>Regulamento Geral sobre a Proteção de Dados (RGPD — Regulamento UE 2016/679)</strong> e a legislação portuguesa aplicável. Esta política explica como recolhemos, usamos e protegemos os seus dados.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2><span class="legal-section-num">1</span>Responsável pelo Tratamento</h2>
+      <p>O responsável pelo tratamento dos dados pessoais é o <strong>Instituto Superior de Engenharia do Porto (ISEP)</strong>, representado pela equipa do projeto RehabBox, contactável através de <a href="mailto:rehabbox@isep.pt">rehabbox@isep.pt</a>.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2><span class="legal-section-num">2</span>Dados que Recolhemos</h2>
+      <p>O sistema recolhe exclusivamente os dados necessários para o funcionamento do serviço de reabilitação:</p>
+      <ul>
+        <li><strong>Dados de identificação:</strong> nome e endereço de email do paciente (fornecidos pelo terapeuta).</li>
+        <li><strong>Dados de sessão:</strong> pontuações, nível de dificuldade, tempo de sessão, precisão e histórico de jogos.</li>
+        <li><strong>Notas clínicas:</strong> observações introduzidas pelo terapeuta responsável.</li>
+        <li><strong>Dados de utilização técnica:</strong> registos de acesso à plataforma de administração (sem rastreamento de comportamento).</li>
+      </ul>
+      <div class="legal-highlight">
+        <p>O RehabBox <strong>não recolhe</strong> dados de saúde sensíveis além dos necessários para a terapia, não utiliza cookies de rastreamento de terceiros e não vende ou partilha dados com entidades externas.</p>
+      </div>
+    </div>
+
+    <div class="legal-section">
+      <h2><span class="legal-section-num">3</span>Finalidade do Tratamento</h2>
+      <p>Os dados são tratados exclusivamente para:</p>
+      <ul>
+        <li>Gerir perfis de pacientes e sessões terapêuticas;</li>
+        <li>Acompanhar a evolução motora ao longo do tempo;</li>
+        <li>Permitir ao terapeuta ajustar os parâmetros de terapia;</li>
+        <li>Garantir o funcionamento técnico e a segurança da plataforma.</li>
+      </ul>
+      <p>Base jurídica: <strong>consentimento explícito</strong> do paciente (Art.º 6.º, n.º 1, al. a) e Art.º 9.º, n.º 2, al. a) do RGPD) e <strong>interesse legítimo</strong> no contexto de investigação académica supervisionada.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2><span class="legal-section-num">4</span>Os Seus Direitos</h2>
+      <p>Como titular dos dados, tem os seguintes direitos, exercíveis gratuitamente através de <a href="mailto:rehabbox@isep.pt">rehabbox@isep.pt</a>:</p>
+      <div class="rights-grid">
+        <div class="rights-item"><strong>Direito de Acesso</strong><p>Conhecer quais os dados que temos sobre si e como são utilizados.</p></div>
+        <div class="rights-item"><strong>Direito de Retificação</strong><p>Corrigir dados incorretos ou desatualizados.</p></div>
+        <div class="rights-item"><strong>Direito ao Apagamento</strong><p>Solicitar a eliminação de todos os seus dados ("direito a ser esquecido").</p></div>
+        <div class="rights-item"><strong>Direito à Portabilidade</strong><p>Receber os seus dados num formato estruturado e legível por máquina.</p></div>
+        <div class="rights-item"><strong>Direito de Oposição</strong><p>Opor-se ao tratamento dos seus dados em qualquer momento.</p></div>
+        <div class="rights-item"><strong>Direito de Reclamação</strong><p>Apresentar queixa junto da <a href="https://www.cnpd.pt" target="_blank" rel="noopener">CNPD</a> (Comissão Nacional de Proteção de Dados).</p></div>
+      </div>
+    </div>
+
+    <div class="legal-section">
+      <h2><span class="legal-section-num">5</span>Retenção e Segurança dos Dados</h2>
+      <p>Os dados são conservados pelo período estritamente necessário à prestação do serviço terapêutico e, no máximo, durante <strong>2 anos</strong> após o término da participação no programa.</p>
+      <p>Aplicamos medidas técnicas e organizacionais para proteger os dados contra acesso não autorizado, perda ou destruição, incluindo controlo de acesso por autenticação, armazenamento local cifrado e acesso restrito ao terapeuta responsável.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2><span class="legal-section-num">6</span>Cookies</h2>
+      <p>O RehabBox utiliza apenas <strong>cookies estritamente necessários</strong> ao funcionamento da sessão de autenticação. Não utilizamos cookies de marketing, publicidade ou análise comportamental de terceiros.</p>
+    </div>
+
+    <div class="legal-contact-card">
+      <h3>Dúvidas sobre privacidade?</h3>
+      <p>A nossa equipa responde em até 72 horas úteis.</p>
+      <a href="mailto:rehabbox@isep.pt">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        rehabbox@isep.pt
+      </a>
+    </div>
+  </div>
+
+  <!-- ══ TERMOS ══ -->
+  <div class="legal-panel" id="panel-termos" role="tabpanel">
+
+    <div class="legal-intro">
+      <p>Ao aceder e utilizar o sistema <strong>RehabBox</strong> — seja o dispositivo físico ou a plataforma digital — o utilizador aceita os presentes Termos de Utilização. Caso não concorde com algum dos termos, deverá cessar a utilização do sistema.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2><span class="legal-section-num">1</span>Âmbito e Natureza do Serviço</h2>
+      <p>O RehabBox é um sistema de reabilitação motora desenvolvido no âmbito de um projeto académico do <strong>ISEP — Instituto Superior de Engenharia do Porto</strong>. O sistema destina-se exclusivamente a fins de reabilitação terapêutica supervisionada, não substituindo tratamento médico, diagnóstico clínico ou acompanhamento por profissionais de saúde qualificados.</p>
+      <div class="legal-highlight">
+        <p><strong>Aviso importante:</strong> O RehabBox é um projeto académico em fase de desenvolvimento e validação. Deve ser sempre utilizado sob orientação de um terapeuta ou profissional de saúde qualificado.</p>
+      </div>
+    </div>
+
+    <div class="legal-section">
+      <h2><span class="legal-section-num">2</span>Utilizadores e Perfis</h2>
+      <p>O sistema distingue dois tipos de utilizadores:</p>
+      <ul>
+        <li><strong>Administrador/Terapeuta:</strong> tem acesso à plataforma de gestão, pode criar e gerir perfis de pacientes, configurar sessões e consultar resultados.</li>
+        <li><strong>Paciente:</strong> interage com o dispositivo físico. O perfil é criado e gerido pelo terapeuta responsável.</li>
+      </ul>
+      <p>O administrador é responsável por garantir que os pacientes foram devidamente informados sobre o funcionamento do sistema e prestaram o seu consentimento informado.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2><span class="legal-section-num">3</span>Utilização Adequada</h2>
+      <p>O utilizador compromete-se a:</p>
+      <ul>
+        <li>Utilizar o sistema apenas para fins terapêuticos e de acordo com as indicações clínicas;</li>
+        <li>Não partilhar credenciais de acesso à plataforma de administração;</li>
+        <li>Não tentar aceder a perfis de outros pacientes sem autorização;</li>
+        <li>Reportar qualquer anomalia técnica ou problema de segurança à equipa (rehabbox@isep.pt);</li>
+        <li>Não utilizar o sistema para fins comerciais sem autorização expressa da equipa do projeto.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2><span class="legal-section-num">4</span>Propriedade Intelectual e Licença</h2>
+      <p>O RehabBox é disponibilizado sob uma licença <strong>open-source</strong> (MIT License). O código-fonte, esquemas de hardware e documentação técnica podem ser utilizados, reproduzidos e modificados para fins académicos e de investigação, com a devida atribuição à equipa original.</p>
+      <p>A marca "RehabBox" e os elementos visuais do projeto não podem ser utilizados para fins comerciais sem autorização prévia.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2><span class="legal-section-num">5</span>Limitação de Responsabilidade</h2>
+      <p>O ISEP e a equipa do projeto RehabBox não assumem responsabilidade por:</p>
+      <ul>
+        <li>Danos físicos resultantes de utilização incorreta ou não supervisionada do dispositivo;</li>
+        <li>Interrupções técnicas do serviço no contexto de um projeto académico em desenvolvimento;</li>
+        <li>Perda de dados resultante de falhas técnicas fora do controlo da equipa.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2><span class="legal-section-num">6</span>Alterações aos Termos</h2>
+      <p>A equipa reserva-se o direito de atualizar estes Termos de Utilização. As alterações serão comunicadas por email aos utilizadores registados e publicadas nesta página com a data de atualização indicada.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2><span class="legal-section-num">7</span>Lei Aplicável</h2>
+      <p>Estes termos são regidos pela lei portuguesa. Qualquer litígio será submetido à jurisdição competente dos tribunais portugueses.</p>
+    </div>
+
+    <div class="legal-contact-card">
+      <h3>Questões sobre os termos?</h3>
+      <p>Contacte-nos para esclarecimentos adicionais.</p>
+      <a href="mailto:rehabbox@isep.pt">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        rehabbox@isep.pt
+      </a>
+    </div>
+  </div>
+
+  <!-- ══ ACESSIBILIDADE ══ -->
+  <div class="legal-panel" id="panel-acessibilidade" role="tabpanel">
+
+    <div class="legal-intro">
+      <p>O <strong>RehabBox</strong> está comprometido com a acessibilidade digital e com a garantia de que todos os utilizadores — incluindo pessoas com deficiência — possam aceder e utilizar o sistema de forma eficaz. Esta declaração é elaborada em conformidade com o <strong>DL n.º 83/2018</strong> e as <strong>Web Content Accessibility Guidelines (WCAG) 2.1</strong>.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2><span class="legal-section-num">1</span>Estado de Conformidade</h2>
+      <div class="a11y-level">
+        <svg viewBox="0 0 24 24"><polyline points="20,6 9,17 4,12"/></svg>
+        Conformidade parcial com WCAG 2.1 — Nível AA
+      </div>
+      <p>A plataforma digital (website) encontra-se em conformidade parcial com as WCAG 2.1 nível AA. Algumas componentes ainda estão em processo de melhoria. O dispositivo físico foi concebido tendo em conta as necessidades específicas de utilizadores com doença de Parkinson.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2><span class="legal-section-num">2</span>Medidas de Acessibilidade Implementadas</h2>
+      <ul>
+        <li><strong>Navegação por teclado:</strong> todas as funcionalidades principais do website são acessíveis via teclado;</li>
+        <li><strong>Contraste de cores:</strong> rácio de contraste mínimo de 4.5:1 entre texto e fundo;</li>
+        <li><strong>Texto alternativo:</strong> imagens relevantes têm texto alternativo descritivo;</li>
+        <li><strong>Estrutura semântica:</strong> uso correto de cabeçalhos HTML (h1–h4) e landmarks ARIA;</li>
+        <li><strong>Atributos ARIA:</strong> componentes interativos (tabs, accordion) têm roles e estados ARIA adequados;</li>
+        <li><strong>Tamanho de fonte responsivo:</strong> o texto escala corretamente com o zoom do browser até 200%;</li>
+        <li><strong>Animações:</strong> componentes em movimento podem ser pausados ou reduzidos via preferência do sistema (prefers-reduced-motion).</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2><span class="legal-section-num">3</span>Acessibilidade do Dispositivo Físico</h2>
+      <p>O hardware RehabBox foi projetado com foco nas limitações motoras do Parkinson:</p>
+      <ul>
+        <li>Botões com área de contacto alargada (44×44mm) para facilitar o uso por pessoas com tremor;</li>
+        <li>Sensor táctil capacitivo que não exige pressão física significativa;</li>
+        <li>Display LCD com texto de alto contraste (verde sobre preto);</li>
+        <li>LEDs coloridos (vermelho, azul, verde) com intensidade ajustável;</li>
+        <li>Joystick analógico com resistência calibrada para controlo suave.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2><span class="legal-section-num">4</span>Limitações Conhecidas</h2>
+      <p>As seguintes limitações estão identificadas e estão a ser corrigidas em versões futuras:</p>
+      <ul>
+        <li>A plataforma administrativa ainda não tem suporte completo para leitores de ecrã (em desenvolvimento);</li>
+        <li>Alguns gráficos de dados não têm alternativas textuais completas;</li>
+        <li>O cursor personalizado (crosshair) desaparece ao usar navegação por teclado (cursor do sistema assume controlo corretamente).</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2><span class="legal-section-num">5</span>Tecnologias de Apoio Testadas</h2>
+      <p>O website foi testado com as seguintes combinações:</p>
+      <ul>
+        <li>NVDA + Firefox (Windows)</li>
+        <li>VoiceOver + Safari (macOS e iOS)</li>
+        <li>TalkBack + Chrome (Android)</li>
+        <li>Navegação exclusiva por teclado (Tab, Enter, Escape, setas)</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2><span class="legal-section-num">6</span>Contacto e Feedback</h2>
+      <p>Se encontrar barreiras de acessibilidade que não estão mencionadas nesta declaração, ou se precisar de informação num formato alternativo (letra grande, formato áudio, Braille), contacte-nos:</p>
+      <ul>
+        <li>Email: <a href="mailto:rehabbox@isep.pt">rehabbox@isep.pt</a></li>
+        <li>Resposta garantida em até <strong>5 dias úteis</strong>.</li>
+      </ul>
+      <p>Tem também o direito de apresentar uma queixa ao <strong>Conselho de Ministros</strong> através do mecanismo previsto no DL n.º 83/2018, caso considere que a resposta não foi satisfatória.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2><span class="legal-section-num">7</span>Data da Declaração</h2>
+      <p>Esta declaração de acessibilidade foi elaborada em <strong>maio de 2026</strong> e será revista anualmente ou sempre que ocorram alterações significativas ao website.</p>
+    </div>
+
+    <div class="legal-contact-card">
+      <h3>Encontrou uma barreira de acessibilidade?</h3>
+      <p>Informe-nos e trataremos do assunto com prioridade.</p>
+      <a href="mailto:rehabbox@isep.pt">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Reportar problema
+      </a>
+    </div>
+  </div>
+
+</div><!-- /legal-body -->
+
+<!-- ════ FOOTER ════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a href="index.html" class="nav-logo" style="display:inline-flex;text-decoration:none;">
+          <div class="logo-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#F4E9CD" stroke-width="2" stroke-linecap="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <span class="logo-wordmark">Rehab<span>Box</span></span>
+        </a>
+        <p>Sistema de reabilitação interativa para pacientes com doença de Parkinson. Projeto académico desenvolvido no ISEP, Porto, 2026.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Projeto</h5>
+        <a href="index.html#sobre">Sobre o RehabBox</a>
+        <a href="index.html#jogos">Jogos</a>
+        <a href="index.html#como-funciona">Como Funciona</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#equipa">Equipa</a>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <a href="legal.html?tab=privacidade" class="footer-link-active">Política de Privacidade</a>
+        <a href="legal.html?tab=termos">Termos de Utilização</a>
+        <a href="legal.html?tab=acessibilidade">Acessibilidade</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <a href="mailto:rehabbox@isep.pt">rehabbox@isep.pt</a>
+        <a href="https://www.isep.ipp.pt" target="_blank" rel="noopener">ISEP</a>
+        <a href="#">Porto, Portugal</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 RehabBox — Projeto Académico, ISEP. Todos os direitos reservados.</p>
+      <div class="footer-links">
+        <a href="legal.html?tab=privacidade">Privacidade</a>
+        <a href="legal.html?tab=termos">Termos</a>
+        <a href="legal.html?tab=acessibilidade">Acessibilidade</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="./assets/js/main.js"></script>
+<script>
+/* ── Tab switching ── */
+function switchTab(name) {
+  // update buttons
+  document.querySelectorAll('.legal-tab').forEach(t => {
+    const active = t.dataset.tab === name;
+    t.classList.toggle('active', active);
+    t.setAttribute('aria-selected', active);
+  });
+  // update panels
+  document.querySelectorAll('.legal-panel').forEach(p => {
+    p.classList.toggle('active', p.id === 'panel-' + name);
+  });
+  // update URL without reload
+  const url = new URL(window.location.href);
+  url.searchParams.set('tab', name);
+  history.replaceState(null, '', url.toString());
+}
+
+/* ── Read ?tab= param on load ── */
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const tab = params.get('tab');
+  if (tab && ['privacidade','termos','acessibilidade'].includes(tab)) {
+    switchTab(tab);
+  }
+})();
+</script>
+</body>
+</html>

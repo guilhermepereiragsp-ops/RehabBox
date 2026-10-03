@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RehabBox — Reabilitação Motora para Parkinson</title>
+  <meta name="description" content="Sistema físico de jogos terapêuticos que transforma a reabilitação diária de pacientes com doença de Parkinson numa experiência motivadora.">
+  <link rel="icon" type="image/png" href="./assets/images/logo1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+<div class="cursor-dot"   id="cursorDot"></div>
+<div class="cursor-cross" id="cursorCross"></div>
+
+<!-- ════════════════════ NAV ════════════════════ -->
+<nav id="mainNav">
+  <a href="#" class="nav-logo">
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#F4E9CD" stroke-width="2" stroke-linecap="round">
+        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+        <path d="M2 17l10 5 10-5"/>
+        <path d="M2 12l10 5 10-5"/>
+      </svg>
+    </div>
+    <span class="logo-wordmark">Rehab<span>Box</span></span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#funcionalidades">Funcionalidades</a></li>
+    <li><a href="#jogos">Jogos</a></li>
+    <li><a href="#como-funciona">Como Funciona</a></li>
+    <li><a href="#testemunhos">Testemunhos</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#equipa">Equipa</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <a href="#contacto" class="btn-ghost">Contacto</a>
+    <a href="login.php" class="btn-primary">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/>
+      </svg>
+      Iniciar Sessão
+    </a>
+  </div>
+</nav>
+
+<!-- ════════════════════ HERO ════════════════════ -->
+<section class="hero" id="inicio">
+  <div class="hero-grid"></div>
+
+  <div class="hero-badge">
+    <div class="badge-pulse"></div>
+    Projeto Académico · ISEP · 2026
+  </div>
+
+  <h1 class="hero-title">
+    Reabilitação<br>
+    <span class="highlight">motora interativa</span>
+    <span class="accent-line">para doença de Parkinson</span>
+  </h1>
+
+  <p class="hero-sub">
+    Um sistema físico de jogos terapêuticos que transforma a reabilitação diária numa experiência motivadora — combinando hardware especializado com software adaptativo.
+  </p>
+
+  <div class="hero-ctas">
+    <a href="login.php" class="btn-primary btn-primary-lg">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/>
+      </svg>
+      Aceder à Plataforma
+    </a>
+    <a href="#sobre" class="btn-secondary-lg">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 16v-4M12 8h.01"/>
+      </svg>
+      Saber Mais
+    </a>
+  </div>
+
+  <!-- Device Mockup -->
+  <div class="hero-device">
+    <div class="device-frame">
+      <div class="device-topbar">
+        <div class="device-dots">
+          <div class="d-dot r"></div>
+          <div class="d-dot y"></div>
+          <div class="d-dot g"></div>
+        </div>
+        <div class="device-title">RehabBox v1.0</div>
+        <div class="device-status"><div class="status-dot"></div>Sistema Ativo</div>
+      </div>
+
+      <div class="device-body">
+        <div class="device-lcd">
+          <div class="lcd-line">JOGO: REACAO RAPIDA</div>
+          <div class="lcd-line blink">NIVEL 2 &gt;&gt; ATIVO &#9608;</div>
+        </div>
+        <div class="device-stats">
+          <div class="dstat"><div class="dstat-label">Pontos</div><div class="dstat-val blue">2.450</div></div>
+          <div class="dstat"><div class="dstat-label">Sessão</div><div class="dstat-val teal">12min</div></div>
+          <div class="dstat"><div class="dstat-label">Precisão</div><div class="dstat-val amber">87%</div></div>
+          <div class="dstat"><div class="dstat-label">Nível</div><div class="dstat-val green">2/3</div></div>
+        </div>
+      </div>
+
+      <div class="device-controls">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div class="touch-sensor">
+            <div class="sensor-visual">
+              <div class="sensor-ring"></div>
+              <div class="sensor-ring"></div>
+              <div class="sensor-ring"></div>
+            </div>
+          </div>
+          <span class="ctrl-label">Touch</span>
+        </div>
+        <div class="ctrl-buttons">
+          <div class="ctrl-btn cb-red"></div>
+          <div class="ctrl-btn cb-blue"></div>
+          <div class="ctrl-btn cb-green"></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <span class="ctrl-label">Joystick</span>
+          <div class="joystick-housing"><div class="joystick-nub"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ MARQUEE ════════════════════ -->
+<div class="marquee-section" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item"><div class="marquee-dot"></div>Reabilitação Motora</span>
+    <span class="marquee-item"><div class="marquee-dot"></div>Doença de Parkinson</span>
+    <span class="marquee-item"><div class="marquee-dot"></div>Hardware Open-Source</span>
+    <span class="marquee-item"><div class="marquee-dot"></div>Jogos Terapêuticos</span>
+    <span class="marquee-item"><div class="marquee-dot"></div>ISEP · Porto · 2026</span>
+    <span class="marquee-item"><div class="marquee-dot"></div>Coordenação Motora</span>
+    <span class="marquee-item"><div class="marquee-dot"></div>Dificuldade Adaptativa</span>
+    <span class="marquee-item"><div class="marquee-dot"></div>Feedback em Tempo Real</span>
+    <span class="marquee-item"><div class="marquee-dot"></div>Reabilitação Motora</span>
+    <span class="marquee-item"><div class="marquee-dot"></div>Doença de Parkinson</span>
+    <span class="marquee-item"><div class="marquee-dot"></div>Hardware Open-Source</span>
+    <span class="marquee-item"><div class="marquee-dot"></div>Jogos Terapêuticos</span>
+    <span class="marquee-item"><div class="marquee-dot"></div>ISEP · Porto · 2026</span>
+    <span class="marquee-item"><div class="marquee-dot"></div>Coordenação Motora</span>
+    <span class="marquee-item"><div class="marquee-dot"></div>Dificuldade Adaptativa</span>
+    <span class="marquee-item"><div class="marquee-dot"></div>Feedback em Tempo Real</span>
+  </div>
+</div>
+
+<!-- ════════════════════ SOBRE ════════════════════ -->
+<section id="sobre" class="about-section">
+  <div class="about-inner">
+    <div class="reveal">
+      <div class="eyebrow">Sobre o Projeto</div>
+      <h2 class="heading">Uma caixa que<br>torna a terapia<br><em>mais humana</em></h2>
+      <p class="lead">O RehabBox nasceu da necessidade de tornar a reabilitação motora mais acessível, consistente e motivadora para pacientes com doença de Parkinson — através de jogos físicos com feedback imediato.</p>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <h4>Investigação e Diagnóstico Clínico</h4>
+          <p>Análise das limitações motoras específicas do Parkinson e definição dos requisitos terapêuticos com profissionais de saúde.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:var(--teal-m);box-shadow:0 0 0 3px rgba(119,172,162,0.14);"></div>
+          <h4>Desenvolvimento de Hardware</h4>
+          <p>Caixa física com microcontrolador, botões, joystick analógico, sensor táctil capacitivo, LCD e LED.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:var(--ash);box-shadow:0 0 0 3px rgba(157,190,187,0.14);"></div>
+          <h4>Design de Jogos Terapêuticos</h4>
+          <p>3 jogos focados em destreza, coordenação, velocidade de reação e memória motora.</p>
+        </div>
+        <div class="tl-item" style="padding-bottom:0;">
+          <div class="tl-dot" style="background:var(--ink);box-shadow:0 0 0 3px rgba(18,55,70,0.12);"></div>
+          <h4>Testes e Validação</h4>
+          <p>Validação com utilizadores reais, ajuste dos parâmetros e análise de resultados clínicos.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="context-visual reveal reveal-delay-2">
+      <div class="cv-label">Estatísticas Globais</div>
+      <div class="stat-row">
+        <div class="stat-item"><span class="stat-item-label">Pessoas com Parkinson no mundo</span><span class="stat-item-val t">10M+</span></div>
+        <div class="stat-item"><span class="stat-item-label">Crescimento de casos por ano</span><span class="stat-item-val b">+3%</span></div>
+        <div class="stat-item"><span class="stat-item-label">Melhoria com terapia regular</span><span class="stat-item-val a">↑ 40%</span></div>
+        <div class="stat-item"><span class="stat-item-label">Jogos terapêuticos disponíveis</span><span class="stat-item-val" style="color:var(--teal-m);">3</span></div>
+      </div>
+      <div class="prog-group">
+        <div class="cv-label">Progresso do Projeto</div>
+        <div class="pv"><div class="pl"><span>Hardware</span><span style="color:var(--teal-m);">100%</span></div><div class="pb"><div class="pf" style="width:100%"></div></div></div>
+        <div class="pv"><div class="pl"><span>Software / Jogos</span><span style="color:var(--teal-m);">85%</span></div><div class="pb"><div class="pf" style="width:85%"></div></div></div>
+        <div class="pv"><div class="pl"><span>Testes Clínicos</span><span style="color:var(--ash);">60%</span></div><div class="pb"><div class="pf" style="width:60%;background:linear-gradient(90deg,var(--teal-m),var(--ash));"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ FUNCIONALIDADES ════════════════════ -->
+<section class="features-section" id="funcionalidades">
+  <div class="section-inner">
+    <div class="text-center reveal">
+      <div class="eyebrow" style="justify-content:center;">Funcionalidades</div>
+      <h2 class="heading">Tudo pensado para<br><em>quem precisa de apoio</em></h2>
+      <p class="lead" style="margin:0 auto;">O sistema foi desenhado para ser robusto, acessível e eficaz — tanto para pacientes como para clínicos.</p>
+    </div>
+
+    <div class="bento reveal reveal-delay-1">
+
+      <!-- número de componentes -->
+      <div class="bento-card span-5">
+        <div class="eyebrow" style="font-size:0.65rem;">Componentes físicos</div>
+        <div class="bento-number">6<span>+</span></div>
+        <p style="margin-top:0.4rem;">sensores e controlos físicos dedicados a diferentes tipos de movimento motor</p>
+      </div>
+
+      <!-- LCD -->
+      <div class="bento-card span-7">
+        <span class="bento-tag tag-blue">Hardware</span>
+        <div class="bento-icon blue">
+          <svg viewBox="0 0 24 24" stroke="#60A5FA"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+        </div>
+        <h3>Display LCD com Feedback Imediato</h3>
+        <p>Ecrã LCD 16×2 que apresenta em tempo real o jogo ativo, nível de dificuldade, pontuação e progresso — tornando cada sessão envolvente.</p>
+        <div style="margin-top:1.1rem;">
+          <div class="bprog-label"><span>Taxa de engajamento</span><span style="color:#60A5FA;">94%</span></div>
+          <div class="bprog-bar"><div class="bprog-fill" style="width:94%"></div></div>
+        </div>
+      </div>
+
+      <!-- sensor táctil -->
+      <div class="bento-card span-4">
+        <span class="bento-tag tag-teal">Sensor</span>
+        <div class="bento-icon teal">
+          <svg viewBox="0 0 24 24" stroke="var(--teal-m)"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="7" stroke-dasharray="2 3"/><circle cx="12" cy="12" r="10" opacity="0.4"/></svg>
+        </div>
+        <h3>Sensor Táctil Capacitivo</h3>
+        <p>Deteção precisa do toque para jogos de destreza, sem necessidade de pressão excessiva — ideal para mãos com tremor.</p>
+      </div>
+
+      <!-- joystick -->
+      <div class="bento-card span-4">
+        <span class="bento-tag tag-amber">Controlo</span>
+        <div class="bento-icon amber">
+          <svg viewBox="0 0 24 24" stroke="#FCD34D"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
+        </div>
+        <h3>Joystick Analógico</h3>
+        <p>Controlo direcional de alta sensibilidade para navegação em jogos de coordenação motora fina.</p>
+      </div>
+
+      <!-- dificuldade progressiva -->
+      <div class="bento-card span-4">
+        <span class="bento-tag tag-teal">Adaptativo</span>
+        <div class="bento-icon teal">
+          <svg viewBox="0 0 24 24" stroke="var(--teal-m)"><path d="M3 12l5-5 4 4 5-6 4 4"/><path d="M3 20h18" opacity="0.4"/></svg>
+        </div>
+        <h3>3 Níveis de Dificuldade</h3>
+        <p>O sistema adapta a dificuldade progressivamente — do nível 1 ao 3 — com base no desempenho de cada sessão.</p>
+      </div>
+
+      <!-- perfis -->
+      <div class="bento-card span-8">
+        <span class="bento-tag tag-teal">Perfis</span>
+        <div style="display:flex;gap:2rem;align-items:center;">
+          <div>
+            <div class="bento-icon teal" style="margin-bottom:0.9rem;">
+              <svg viewBox="0 0 24 24" stroke="var(--teal-m)"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Múltiplos Perfis de Utilizador</h3>
+            <p>Perfis individualizados por paciente com histórico de sessões, evolução e ajustes personalizados de terapia.</p>
+          </div>
+          <div style="flex-shrink:0;display:flex;flex-direction:column;gap:0.55rem;">
+            <div class="profile-pill">
+              <div class="profile-av" style="background:linear-gradient(135deg,var(--teal-d),var(--teal-m));">J</div>
+              <div><div class="profile-name">João Silva</div><div class="profile-sub">Nível 3 · Sessão 14</div></div>
+            </div>
+            <div class="profile-pill">
+              <div class="profile-av" style="background:linear-gradient(135deg,#1D4ED8,#3B82F6);">M</div>
+              <div><div class="profile-name">Maria Costa</div><div class="profile-sub">Nível 1 · Sessão 3</div></div>
+            </div>
+            <div class="profile-pill" style="border-color:rgba(70,129,137,0.2);">
+              <div class="profile-av" style="background:linear-gradient(135deg,var(--ink),var(--teal-d));">A</div>
+              <div><div class="profile-name">António Ferreira</div><div class="profile-sub active">● Sessão ativa</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- open source -->
+      <div class="bento-card span-4">
+        <div class="bento-icon teal">
+          <svg viewBox="0 0 24 24" stroke="var(--teal-m)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Open-Source &amp; Documentado</h3>
+        <p>Código e esquemas disponíveis publicamente para reprodução, investigação e evolução por outros projetos académicos.</p>
+      </div>
+
+      <!-- LED -->
+      <div class="bento-card span-6">
+        <span class="bento-tag tag-blue">LED</span>
+        <h3>Feedback Visual LED</h3>
+        <p>LED de estado com cores (vermelho, azul, verde) para comunicar acertos, erros e mudanças de nível de forma imediata e intuitiva — sem necessidade de ler o ecrã.</p>
+      </div>
+
+      <!-- sessões recomendadas -->
+      <div class="bento-card span-6">
+        <div class="eyebrow" style="font-size:0.65rem;">Sessões recomendadas</div>
+        <div class="bento-number">3<span>×</span></div>
+        <p style="margin-top:0.25rem;">por semana, de 15 a 30 minutos — suficiente para estimulação motora consistente e melhoria progressiva.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ JOGOS (3 apenas) ════════════════════ -->
+<section class="games-section" id="jogos">
+  <div class="section-inner">
+    <div class="games-header reveal">
+      <div>
+        <div class="eyebrow">Biblioteca de Jogos</div>
+        <h2 class="heading mb-0">Cada jogo, um<br><em>objetivo terapêutico</em></h2>
+      </div>
+      <p class="lead" style="max-width:340px;">Três jogos concebidos especificamente para as limitações motoras do Parkinson, com 3 níveis de dificuldade cada.</p>
+    </div>
+
+    <!-- 3 jogos em grelha de 3 colunas -->
+    <div class="games-grid-3 reveal reveal-delay-1">
+
+      <div class="game-card game-card-lg">
+        <div class="game-card-header">
+          <span class="game-icon">🎯</span>
+          <span class="game-diff diff-easy">Iniciante → Avançado</span>
+        </div>
+        <h3>Reação Rápida</h3>
+        <p>Pressiona o botão correto (vermelho, azul ou verde) quando o LED correspondente acende. O tempo de reação diminui progressivamente à medida que o nível sobe. Treina velocidade de resposta e coordenação olho-mão.</p>
+        <div class="game-levels">
+          <div class="game-level-item active"><span>N1</span>Tempo lento</div>
+          <div class="game-level-item active"><span>N2</span>Tempo médio</div>
+          <div class="game-level-item active"><span>N3</span>Sequências</div>
+        </div>
+        <div class="game-stat"><div class="game-stat-dot" style="background:#22C55E;"></div>Foco: Velocidade de Reação</div>
+      </div>
+
+      <div class="game-card game-card-lg">
+        <div class="game-card-header">
+          <span class="game-icon">🕹️</span>
+          <span class="game-diff diff-mid">Iniciante → Avançado</span>
+        </div>
+        <h3>Labirinto Digital</h3>
+        <p>Navega um percurso apresentado no LCD usando o joystick analógico sem tocar nas paredes. Os labirintos tornam-se progressivamente mais complexos. Melhora a coordenação motora fina e o controlo direcional.</p>
+        <div class="game-levels">
+          <div class="game-level-item active"><span>N1</span>Percurso simples</div>
+          <div class="game-level-item active"><span>N2</span>Curvas apertadas</div>
+          <div class="game-level-item active"><span>N3</span>Labirinto completo</div>
+        </div>
+        <div class="game-stat"><div class="game-stat-dot" style="background:var(--teal-d);"></div>Foco: Coordenação Motora</div>
+      </div>
+
+      <div class="game-card game-card-lg">
+        <div class="game-card-header">
+          <span class="game-icon">🎵</span>
+          <span class="game-diff diff-mid">Iniciante → Avançado</span>
+        </div>
+        <h3>Ritmo e Sequência</h3>
+        <p>Reproduz sequências de botões apresentadas no LCD ao ritmo indicado. À medida que o nível sobe, as sequências ficam mais longas e o ritmo mais exigente. Trabalha memória motora e atenção sustentada.</p>
+        <div class="game-levels">
+          <div class="game-level-item active"><span>N1</span>3 botões</div>
+          <div class="game-level-item active"><span>N2</span>5 botões</div>
+          <div class="game-level-item active"><span>N3</span>Sequência longa</div>
+        </div>
+        <div class="game-stat"><div class="game-stat-dot" style="background:#3B82F6;"></div>Foco: Memória Motora</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ COMO FUNCIONA ════════════════════ -->
+<section class="how-section" id="como-funciona">
+  <div class="section-inner">
+    <div class="text-center reveal">
+      <div class="eyebrow" style="justify-content:center;">Como Funciona</div>
+      <h2 class="heading">Simples de usar,<br><em>eficaz na prática</em></h2>
+      <p class="lead" style="margin:0 auto;">O processo foi desenhado para ser intuitivo para pacientes e profissionais de saúde, sem necessidade de conhecimentos técnicos.</p>
+    </div>
+    <div class="steps-container reveal reveal-delay-1">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <h4>Configuração do Perfil</h4>
+        <p>O terapeuta cria o perfil do paciente na plataforma e define o nível inicial e o tipo de jogo mais adequado.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <h4>Sessão de Jogo</h4>
+        <p>O paciente interage com a caixa física de forma autónoma, guiado pelo LCD e pelos LEDs coloridos.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <h4>Feedback Imediato</h4>
+        <p>LED e LCD fornecem resposta instantânea a cada ação — acerto, erro ou mudança de nível — mantendo o utilizador envolvido.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">4</div>
+        <h4>Análise de Progresso</h4>
+        <p>Os resultados ficam registados e disponíveis para revisão e ajuste do plano terapêutico pelo clínico responsável.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ TESTEMUNHOS ════════════════════ -->
+<section class="testimonials-section" id="testemunhos">
+  <div class="section-inner">
+    <div class="text-center reveal">
+      <div class="eyebrow" style="justify-content:center;">Testemunhos</div>
+      <h2 class="heading">O que dizem os nossos<br><em>utilizadores</em></h2>
+      <p class="lead" style="margin:0 auto;">Pacientes, cuidadores e terapeutas partilham a sua experiência com o RehabBox.</p>
+    </div>
+
+    <!-- hero testimonial -->
+    <div class="testimonial-hero reveal reveal-delay-1">
+      <div class="testimonial-img-wrap">
+        <img src="./assets/images/belhote.png" alt="Paciente a interagir com o dispositivo RehabBox">
+        <div class="testimonial-img-badge">
+          <div class="badge-dot"></div>
+          <span>Sessão em progresso</span>
+        </div>
+      </div>
+      <div class="testimonial-quote-main">
+        <div>
+          <div class="stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span class="quote-mark">"</span>
+          <p class="quote-text">Nunca pensei que voltaria a sentir prazer num exercício de reabilitação. O RehabBox transformou completamente a forma como encaro as sessões — é como um jogo, não como uma obrigação.</p>
+        </div>
+        <div class="quote-author">
+          <div class="quote-avatar">J</div>
+          <div>
+            <div class="quote-author-name">João Ferreira, 71 anos</div>
+            <div class="quote-author-role">Paciente em reabilitação · Porto</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- cards secundários -->
+    <div class="testimonial-cards reveal reveal-delay-2">
+      <div class="testimonial-card">
+        <div class="mini-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <blockquote>"Os meus pacientes mostram muito mais motivação nas sessões desde que introduzimos o RehabBox. A evolução motora é notável e claramente mensurável."</blockquote>
+        <div class="mini-author">
+          <div class="mini-avatar" style="background:linear-gradient(135deg,var(--teal-d),var(--teal-m));">S</div>
+          <div>
+            <div class="mini-author-name">Dra. Sara Mendes</div>
+            <div class="mini-author-role">Fisioterapeuta · Hospital de São João</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="mini-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <blockquote>"A minha mãe usa o RehabBox todos os dias. Sente que está a jogar, não a fazer terapia — e isso faz toda a diferença na adesão ao tratamento."</blockquote>
+        <div class="mini-author">
+          <div class="mini-avatar" style="background:linear-gradient(135deg,var(--ink),var(--teal-d));">R</div>
+          <div>
+            <div class="mini-author-name">Ricardo Costa</div>
+            <div class="mini-author-role">Cuidador informal · Braga</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="mini-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <blockquote>"Um projeto académico com impacto real. O hardware é robusto e os jogos foram muito bem pensados para as especificidades motoras do Parkinson."</blockquote>
+        <div class="mini-author">
+          <div class="mini-avatar" style="background:linear-gradient(135deg,#1D4ED8,var(--teal-d));">P</div>
+          <div>
+            <div class="mini-author-name">Prof. Paulo Oliveira</div>
+            <div class="mini-author-role">Neurologia · Universidade do Porto</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ FAQ ════════════════════ -->
+<section class="faq-section" id="faq">
+  <div class="section-inner">
+    <div class="text-center reveal">
+      <div class="eyebrow" style="justify-content:center;">Perguntas Frequentes</div>
+      <h2 class="heading">Temos respostas<br>para as suas <em>dúvidas</em></h2>
+      <p class="lead" style="margin:0 auto;">Tudo o que precisa de saber sobre o RehabBox antes de começar.</p>
+    </div>
+
+    <div class="faq-grid reveal reveal-delay-1">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>O RehabBox é adequado para qualquer fase da doença de Parkinson?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>O sistema foi concebido para fases iniciais e intermédias da doença. O terapeuta responsável define o nível inicial (1, 2 ou 3) consoante as capacidades motoras do paciente, garantindo que os exercícios são adequados e seguros.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>O paciente pode usar o RehabBox sozinho em casa?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Sim, após a configuração inicial pelo terapeuta, o dispositivo foi projetado para uso autónomo. O LCD e os LEDs guiam o utilizador durante toda a sessão, sem necessidade de supervisão contínua. Os resultados ficam registados para revisão posterior pelo clínico.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Com que frequência deve ser usado?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>A recomendação clínica é de 3 sessões por semana, com duração de 15 a 30 minutos cada. Esta frequência é suficiente para estimulação motora consistente, sem causar fadiga. O terapeuta pode ajustar conforme a evolução do paciente.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>O sistema é seguro para pessoas com tremor severo?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>O hardware foi projetado tendo em conta o tremor característico do Parkinson. O sensor táctil capacitivo não exige pressão, os botões têm uma área de contacto alargada e o software tem tolerâncias ajustáveis para minimizar ativações acidentais.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Onde estão armazenados os dados dos pacientes?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Os dados são armazenados localmente no dispositivo e na plataforma administrativa, com acesso restrito ao terapeuta responsável. O sistema cumpre o Regulamento Geral de Proteção de Dados (RGPD) e os pacientes podem solicitar o apagamento dos seus dados a qualquer momento. Consulte a nossa <a href="legal.html?tab=privacidade">Política de Privacidade</a> para mais detalhes.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>O projeto é open-source? Posso replicá-lo?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Sim! O RehabBox é um projeto académico open-source desenvolvido no ISEP. Todo o código-fonte, esquemas de hardware e documentação técnica estão disponíveis publicamente para fins de investigação, replicação e melhoria. Consulte os Recursos no rodapé para aceder ao repositório GitHub.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ EQUIPA ════════════════════ -->
+<section class="team-section" id="equipa">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="eyebrow">A Nossa Equipa</div>
+      <h2 class="heading">Construído com<br><em>dedicação académica</em></h2>
+      <p class="lead">Estudantes e investigadores do ISEP comprometidos com a inovação em saúde digital.</p>
+    </div>
+    <div class="team-grid reveal reveal-delay-1">
+      <div class="team-card">
+        <div class="avatar-ring">D</div>
+        <h4>Desenvolvedor Principal</h4>
+        <div class="team-role">Hardware &amp; Firmware</div>
+        <p>Responsável pela arquitetura do sistema físico, integração dos componentes eletrónicos e desenvolvimento do firmware de controlo em tempo real.</p>
+      </div>
+      <div class="team-card">
+        <div class="avatar-ring" style="background:linear-gradient(135deg,var(--teal-d),var(--teal-m));">S</div>
+        <h4>Designer de Jogos</h4>
+        <div class="team-role">UX &amp; Terapia</div>
+        <p>Conceção e implementação dos jogos terapêuticos, em estreita colaboração com profissionais de saúde especializados em Parkinson.</p>
+      </div>
+      <div class="team-card">
+        <div class="avatar-ring" style="background:linear-gradient(135deg,#1D4ED8,var(--teal-d));">O</div>
+        <h4>Orientador Científico</h4>
+        <div class="team-role">Investigação Clínica</div>
+        <p>Supervisão científica, validação dos protocolos terapêuticos e ligação com a comunidade clínica e académica nacional.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ CTA ════════════════════ -->
+<section class="cta-section" id="contacto">
+  <div class="cta-inner">
+    <div class="reveal">
+      <div class="eyebrow" style="justify-content:center;">Começar</div>
+      <h2 class="heading" style="max-width:600px;margin:0 auto 1rem;">
+        Pronto para dar<br>o próximo <em>passo?</em>
+      </h2>
+      <p class="lead">Aceda à plataforma ou entre em contacto para saber mais sobre o projeto RehabBox e como o implementar na sua instituição.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2.5rem;">
+        <a href="login.php" class="btn-primary btn-primary-lg">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/>
+          </svg>
+          Iniciar Sessão
+        </a>
+        <a href="mailto:rehabbox@isep.pt" class="btn-outline-light">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          rehabbox@isep.pt
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ FOOTER ════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a href="#" class="nav-logo" style="display:inline-flex;text-decoration:none;">
+          <div class="logo-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#F4E9CD" stroke-width="2" stroke-linecap="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <span class="logo-wordmark">Rehab<span>Box</span></span>
+        </a>
+        <p>Sistema de reabilitação interativa para pacientes com doença de Parkinson. Projeto académico desenvolvido no ISEP, Porto, 2026.</p>
+        <div class="footer-badges">
+          <span class="footer-badge">🏫 ISEP</span>
+          <span class="footer-badge">🔓 Open-Source</span>
+          <span class="footer-badge">🇵🇹 Portugal</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Projeto</h5>
+        <a href="#sobre">Sobre o RehabBox</a>
+        <a href="#funcionalidades">Funcionalidades</a>
+        <a href="#jogos">Jogos</a>
+        <a href="#como-funciona">Como Funciona</a>
+        <a href="#testemunhos">Testemunhos</a>
+        <a href="#faq">FAQ</a>
+        <a href="#equipa">Equipa</a>
+      </div>
+
+      <div class="footer-col">
+        <h5>Recursos</h5>
+        <a href="#">Documentação Técnica</a>
+        <a href="#">Código Fonte (GitHub)</a>
+        <a href="#">Relatório Final</a>
+        <a href="#">Publicações</a>
+        <a href="#">Esquemas de Hardware</a>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <a href="mailto:rehabbox@isep.pt">rehabbox@isep.pt</a>
+        <a href="https://www.isep.ipp.pt" target="_blank" rel="noopener">ISEP — Instituto Superior de Engenharia</a>
+        <a href="#">Rua Dr. António Bernardino de Almeida, 431</a>
+        <a href="#">4249-015 Porto, Portugal</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 RehabBox — Projeto Académico, ISEP. Todos os direitos reservados.</p>
+      <div class="footer-links">
+        <a href="legal.html?tab=privacidade">Política de Privacidade</a>
+        <a href="legal.html?tab=termos">Termos de Utilização</a>
+        <a href="legal.html?tab=acessibilidade">Acessibilidade</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="./assets/js/main.js"></script>
+</body>
+</html>
